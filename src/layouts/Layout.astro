@@ -1,0 +1,32 @@
+---
+const { title = 'My Auto Blog', description = 'AI powered blog, automated with n8n' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">Blog Automation</a>
+    </header>
+    <main><slot /></main>
+    <footer>Published automatically with n8n + Astro</footer>
+  </body>
+</html>
+
+<style is:global>
+  :root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --accent:#ff6d5a; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family: system-ui, sans-serif; line-height:1.7; }
+  a { color:inherit; text-decoration:none; }
+  header { display:flex; justify-content:space-between; align-items:center; max-width:960px; margin:0 auto; padding:20px; }
+  .logo { font-weight:700; font-size:1.3rem; }
+  .tag { color:var(--accent); font-size:.85rem; border:1px solid var(--accent); padding:2px 10px; border-radius:99px; }
+  main { max-width:960px; margin:0 auto; padding:20px; min-height:70vh; }
+  footer { text-align:center; color:var(--muted); padding:30px; font-size:.9rem; }
+</style>
