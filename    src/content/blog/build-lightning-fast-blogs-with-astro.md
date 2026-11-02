@@ -1,0 +1,1 @@
+   src/content/blog/build-lightning-fast-blogs-with-astro.md
